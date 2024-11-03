@@ -6,7 +6,7 @@ import 'package:netflix_clone/screens/movie_detailed_screen.dart';
 class MovieCard extends StatelessWidget {
   final Future<MovieModel> future;
   final String headLineText;
-  const MovieCard( 
+  const MovieCard(
       {super.key, required this.future, required this.headLineText});
 
   @override
@@ -30,31 +30,29 @@ class MovieCard extends StatelessWidget {
                 headLineText,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-           const   SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Expanded(
                 child: ListView.builder(
-               
                     itemCount: data.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return InkWell(onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  MovieDetailScreen(
-                                                      movieId:
-                                                          data[index].id)));
-                                    },
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MovieDetailScreen(
+                                      movieId: data[index].id)));
+                        },
                         child: Container(
                           padding: EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child:
-                              Image.network("$ImageUrl${data[index].posterPath}"),
+                          child: Image.network(
+                              "$ImageUrl${data[index].posterPath}"),
                         ),
                       );
                     }),

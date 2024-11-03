@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/screens/download_screen.dart';
+import 'package:netflix_clone/screens/fast_laughs_screen.dart';
 import 'package:netflix_clone/screens/home_screen.dart';
 import 'package:netflix_clone/screens/more_screen.dart';
-import 'package:netflix_clone/screens/search_screen.dart';
 
 
 class BottomNavBar extends StatelessWidget {
@@ -23,16 +23,16 @@ class BottomNavBar extends StatelessWidget {
                 text: "Home",
               ),
               Tab(
-                icon: Icon(Icons.search),
-                text: "Search",
+                icon: Icon(Icons.emoji_emotions),
+                text: "Fast Laugh",
               ),
               Tab(
                 icon: Icon(Icons.photo_library_outlined),
                 text: "New & Hot",
               ),
-               Tab(
-                icon: Icon(Icons.download_for_offline),    
-                text: "Downloads",  
+              Tab(
+                icon: Icon(Icons.download_for_offline_outlined),
+                text: "Downloads",
               ),
             ],
             indicatorColor: Colors.transparent,
@@ -40,10 +40,13 @@ class BottomNavBar extends StatelessWidget {
             unselectedLabelColor: Color(0xff9999999),
           ),
         ),
-        body: const TabBarView(
-            children: [HomeScreen(), SearchScreen(), MoreScreen(),DownloadScreen()]),       
+        body: const TabBarView(children: [
+          HomeScreen(),
+          FastLaughsScreen(),
+          MoreScreen(),
+          DownloadScreen()
+        ]),
       ),
     );
   }
 }
-

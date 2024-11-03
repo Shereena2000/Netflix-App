@@ -48,24 +48,25 @@ class _MoreScreenState extends State<MoreScreen> {
               indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(20), color: Colors.white),
               labelColor: Colors.black,
-              labelStyle:const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              labelStyle:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               unselectedLabelColor: Colors.white,
-              tabs:const [
+              tabs: const [
                 Tab(
                   text: " 🍿 Coming Soon ",
                   height: 35,
                 ),
                 Tab(
-                  text: " 🔥 Everyone's Watching ", 
-                  height: 35, 
+                  text: " 🔥 Everyone's Watching ",
+                  height: 35,
                 )
               ],
             ),
-          ),  body: const TabBarView(children: [
+          ),
+          body: const TabBarView(children: [
             SingleChildScrollView(
               child: Column(
                 children: [
-          
                   ComingSoonMovieWidget(
                     imageUrl:
                         'https://image.tmdb.org/t/p/original/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg',
@@ -79,7 +80,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                   ComingSoonMovieWidget(
+                  ComingSoonMovieWidget(
                     imageUrl:
                         'https://miro.medium.com/v2/resize:fit:1024/1*P_YU8dGinbCy6GHlgq5OQA.jpeg',
                     overView:
@@ -89,7 +90,6 @@ class _MoreScreenState extends State<MoreScreen> {
                     month: "Jun",
                     day: "19",
                   ),
-                  
                   SizedBox(
                     height: 20,
                   ),
@@ -97,8 +97,8 @@ class _MoreScreenState extends State<MoreScreen> {
                     imageUrl:
                         'https://image.tmdb.org/t/p/original/czembW0Rk1Ke7lCJGahbOhdCuhV.jpg',
                     overView:
-                        'A Filipino romance film starring Joshua Garcia and Julia Barreto. Some say it is a decent, predictable, and formulaic film, but the ending is a standou'
-                  ,  logoUrl:
+                        'A Filipino romance film starring Joshua Garcia and Julia Barreto. Some say it is a decent, predictable, and formulaic film, but the ending is a standou',
+                    logoUrl:
                         "https://image.tmdb.org/t/p/original/hMXA6XiQoqKfqHk3xEKX5WlND4U.jpg",
                     month: "April",
                     day: "24",
@@ -106,7 +106,6 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                    
                   ComingSoonMovieWidget(
                     imageUrl:
                         'https://wallpapers.com/images/featured/game-of-thrones-background-92acb30ilmkjbmu9.jpg',
@@ -133,7 +132,6 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(
                     height: 20,
                   ),
-               
                   ComingSoonMovieWidget(
                     imageUrl:
                         'https://image.tmdb.org/t/p/original/NNxYkU70HPurnNCSiCjYAmacwm.jpg',
@@ -175,10 +173,10 @@ class _MoreScreenState extends State<MoreScreen> {
                     month: "Aug",
                     day: "2",
                   ),
-                    SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
-                   ComingSoonMovieWidget(
+                  ComingSoonMovieWidget(
                     imageUrl:
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGLOJu-X1F2smnA6BTP6zm5HZVsN7tsLqtUw&s',
                     overView:
@@ -188,15 +186,15 @@ class _MoreScreenState extends State<MoreScreen> {
                     month: "Oct",
                     day: "6",
                   ),
-                    SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
-                    ComingSoonMovieWidget(
+                  ComingSoonMovieWidget(
                     imageUrl:
                         'https://image.tmdb.org/t/p/original/czembW0Rk1Ke7lCJGahbOhdCuhV.jpg',
                     overView:
-                        'A Filipino romance film starring Joshua Garcia and Julia Barreto. Some say it is a decent, predictable, and formulaic film, but the ending is a standou'
-                  ,  logoUrl:
+                        'A Filipino romance film starring Joshua Garcia and Julia Barreto. Some say it is a decent, predictable, and formulaic film, but the ending is a standou',
+                    logoUrl:
                         "https://image.tmdb.org/t/p/original/hMXA6XiQoqKfqHk3xEKX5WlND4U.jpg",
                     month: "April",
                     day: "24",
@@ -204,7 +202,6 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                    
                   ComingSoonMovieWidget(
                     imageUrl:
                         'https://wallpapers.com/images/featured/game-of-thrones-background-92acb30ilmkjbmu9.jpg',
