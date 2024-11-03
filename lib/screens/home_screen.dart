@@ -67,34 +67,37 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            FutureBuilder(
-                future: topRatedSeries,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(child: CircularProgressIndicator());
-                  } else if (snapshot.hasError) {
-                    return Center(child: Text('Error: ${snapshot.error}'));
-                  } else if (snapshot.hasData) {
-                    return CustomCarouselSlider(data: snapshot.data!);
-                  } else {
-                    return const SizedBox.shrink();
-                  }
-                }),
-            SizedBox(
-              height: 240,
-              child: MovieCard(
-                  future: nowplayingFuture, headLineText: "Now Playing"),
-            ),
-         const   SizedBox(
-              height: 20,
-            ),
-            SizedBox(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              FutureBuilder(
+                  future: topRatedSeries,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else if (snapshot.hasError) {
+                      return Center(child: Text('Error: ${snapshot.error}'));
+                    } else if (snapshot.hasData) {
+                      return CustomCarouselSlider(data: snapshot.data!);
+                    } else {
+                      return const SizedBox.shrink();
+                    }
+                  }),
+              SizedBox(
                 height: 240,
                 child: MovieCard(
-                    future: upcomingFuture, headLineText: "Upcoming Movies")),
-          ],
+                    future: nowplayingFuture, headLineText: "Now Playing"),
+              ),
+           const   SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                  height: 240,
+                  child: MovieCard(
+                      future: upcomingFuture, headLineText: "Upcoming Movies")),
+            ],
+          ),
         ),
       ),
     );

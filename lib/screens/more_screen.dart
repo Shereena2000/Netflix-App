@@ -53,11 +53,11 @@ class _MoreScreenState extends State<MoreScreen> {
               tabs:const [
                 Tab(
                   text: " 🍿 Coming Soon ",
-                  height: 50,
+                  height: 35,
                 ),
                 Tab(
-                  text: " 🔥 Everyone's Watching ",
-                  height: 50,
+                  text: " 🔥 Everyone's Watching ", 
+                  height: 35, 
                 )
               ],
             ),
