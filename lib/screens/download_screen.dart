@@ -1,6 +1,7 @@
-import 'dart:math';
+
 
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/widgets/download_image_widget.dart';
 
 class DownloadScreen extends StatelessWidget {
   const DownloadScreen({super.key});
@@ -145,7 +146,7 @@ class DownloadScreen extends StatelessWidget {
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
-                      5), // Adjust the value for more or less roundness
+                      5), 
                 ),
               ),
             )
@@ -156,40 +157,3 @@ class DownloadScreen extends StatelessWidget {
   }
 }
 
-class DownloadImageWidget extends StatelessWidget {
-  const DownloadImageWidget({
-    super.key,
-    this.angle = 0,
-    required this.imageList,
-    required this.margin,
-    required this.size,
-    required this.borderRadius,
-  });
-
-  final String imageList;
-  final double angle;
-  final EdgeInsets margin;
-  final Size size;
-  final double borderRadius;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: margin,
-      child: Transform.rotate(
-        angle: angle * pi / 180,
-        child: Container(
-          width: size.width,
-          height: size.height,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(borderRadius),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(imageList),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

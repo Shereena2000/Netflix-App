@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/common/utils.dart';
 import 'package:netflix_clone/models/movie_models.dart';
+import 'package:netflix_clone/models/top_rated.dart';
 import 'package:netflix_clone/models/tv_series_model.dart';
 import 'package:netflix_clone/screens/search_screen.dart';
 import 'package:netflix_clone/sevieces/api_services.dart';
 import 'package:netflix_clone/widgets/custom_carousel.dart';
 import 'package:netflix_clone/widgets/movie_card.dart';
+import 'package:netflix_clone/widgets/top_10_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,7 +19,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late Future<MovieModel> upcomingFuture;
   late Future<MovieModel> nowplayingFuture;
+  late Future<MovieModel> popularMoviesFuture;
   late Future<TvSeriesModel> topRatedSeries;
+  late Future<TopRated> topRated;
+
   ApiServices apiServices = ApiServices();
   @override
   void initState() {
@@ -26,6 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
     upcomingFuture = apiServices.getUpcomingMovies();
     nowplayingFuture = apiServices.getNowMovies();
     topRatedSeries = apiServices.getTopRatedSeries();
+    topRated = apiServices.getTopRated();
+    popularMoviesFuture=apiServices.getMoviePopular();
   }
 
   @override
@@ -43,8 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(right: 20.0),
             child: InkWell(
               onTap: () {
-                  Navigator.pushReplacement(
-          context, (MaterialPageRoute(builder: (context) => SearchScreen())));
+                Navigator.pushReplacement(
+                  context,
+                  (MaterialPageRoute(
+                    builder: (context) => SearchScreen(),
+                  )),
+                );
               },
               child: const Icon(
                 Icons.search,
@@ -85,17 +96,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                   }),
               SizedBox(
-                height: 240,
+                height: 260,
                 child: MovieCard(
                     future: nowplayingFuture, headLineText: "Now Playing"),
               ),
-           const   SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
-                  height: 240,
-                  child: MovieCard(
-                      future: upcomingFuture, headLineText: "Upcoming Movies")),
+                height: 260,
+                child: MovieCard(
+                    future: upcomingFuture, headLineText: "Upcoming Movies"),
+              ),
+              SizedBox(
+                height: 260,
+                child: Top10CardWidget(
+                    future: topRated,
+                    headLineText: "TOP 10 TV Shows In India Today"),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+               SizedBox(
+                height: 260,
+                child: MovieCard(
+                    future: popularMoviesFuture, headLineText: "Popular Movies"),
+              ),
             ],
           ),
         ),
