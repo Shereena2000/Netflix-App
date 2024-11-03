@@ -6,7 +6,7 @@ import 'package:netflix_clone/screens/movie_detailed_screen.dart';
 class MovieCard extends StatelessWidget {
   final Future<MovieModel> future;
   final String headLineText;
-  const MovieCard(
+  const MovieCard( 
       {super.key, required this.future, required this.headLineText});
 
   @override

@@ -19,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late Future<MovieModel> upcomingFuture;
   late Future<MovieModel> nowplayingFuture;
-  late Future<MovieModel> popularMoviesFuture;
+
   late Future<TvSeriesModel> topRatedSeries;
   late Future<TopRated> topRated;
 
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     nowplayingFuture = apiServices.getNowMovies();
     topRatedSeries = apiServices.getTopRatedSeries();
     topRated = apiServices.getTopRated();
-    popularMoviesFuture=apiServices.getMoviePopular();
+
   }
 
   @override
@@ -102,26 +102,27 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(
                 height: 20,
+              ),SizedBox(
+                height: 260,
+                child: Top10CardWidget(
+                    future: topRated,
+                    headLineText: "TOP 10 TV Shows In India Today"),
+              ),const SizedBox(
+                height: 20,
               ),
               SizedBox(
                 height: 260,
                 child: MovieCard(
                     future: upcomingFuture, headLineText: "Upcoming Movies"),
-              ),
-              SizedBox(
-                height: 260,
-                child: Top10CardWidget(
-                    future: topRated,
-                    headLineText: "TOP 10 TV Shows In India Today"),
-              ),
-              const SizedBox(
+              ),const SizedBox(
                 height: 20,
               ),
                SizedBox(
                 height: 260,
                 child: MovieCard(
-                    future: popularMoviesFuture, headLineText: "Popular Movies"),
+                    future: nowplayingFuture, headLineText: "Popular Movies"), 
               ),
+              
             ],
           ),
         ),

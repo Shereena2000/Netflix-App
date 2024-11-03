@@ -37,16 +37,7 @@ class ApiServices {
     throw Exception("faild to load now playing movies");
   }
 
-  Future<MovieModel> getMoviePopular() async {
-    endpoint = "movie/popular";
-    final url = "$baseUrl$endpoint$key";
-    final Response = await http.get(Uri.parse(url));
-    if (Response.statusCode == 200) {
-      print("successs...now playing.............");
-      return MovieModel.fromJson(jsonDecode(Response.body));
-    }
-    throw Exception("faild to load now playing movies");
-  }
+
 
   Future<TopRated> getTopRated() async {
     endpoint = "movie/top_rated";
