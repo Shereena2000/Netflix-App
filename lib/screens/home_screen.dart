@@ -19,7 +19,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late Future<MovieModel> upcomingFuture;
   late Future<MovieModel> nowplayingFuture;
-
   late Future<TvSeriesModel> topRatedSeries;
   late Future<TopRated> topRated;
 
@@ -32,7 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
     nowplayingFuture = apiServices.getNowMovies();
     topRatedSeries = apiServices.getTopRatedSeries();
     topRated = apiServices.getTopRated();
-
   }
 
   @override
@@ -53,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.pushReplacement(
                   context,
                   (MaterialPageRoute(
-                    builder: (context) => SearchScreen(),
+                    builder: (context) =>const SearchScreen(),
                   )),
                 );
               },
@@ -102,27 +100,29 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(
                 height: 20,
-              ),SizedBox(
+              ),
+              SizedBox(
                 height: 260,
                 child: Top10CardWidget(
                     future: topRated,
                     headLineText: "TOP 10 TV Shows In India Today"),
-              ),const SizedBox(
+              ),
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
                 height: 260,
                 child: MovieCard(
                     future: upcomingFuture, headLineText: "Upcoming Movies"),
-              ),const SizedBox(
+              ),
+              const SizedBox(
                 height: 20,
               ),
-               SizedBox(
+              SizedBox(
                 height: 260,
                 child: MovieCard(
-                    future: nowplayingFuture, headLineText: "Popular Movies"), 
+                    future: nowplayingFuture, headLineText: "Popular Movies"),
               ),
-              
             ],
           ),
         ),

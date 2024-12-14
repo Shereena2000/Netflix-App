@@ -28,7 +28,7 @@ class MovieCard extends StatelessWidget {
             children: [
               Text(
                 headLineText,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
@@ -41,13 +41,15 @@ class MovieCard extends StatelessWidget {
                       return InkWell(
                         onTap: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MovieDetailScreen(
-                                      movieId: data[index].id)));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  MovieDetailScreen(movieId: data[index].id),
+                            ),
+                          );
                         },
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                           ),

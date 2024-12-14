@@ -15,7 +15,7 @@ class VideoListItem extends StatelessWidget {
            decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(videoImageUrls),
-            fit: BoxFit.fill, 
+            fit: BoxFit.cover        ,  
           ),
         ),
       ),
@@ -33,7 +33,7 @@ class VideoListItem extends StatelessWidget {
                 backgroundColor: Colors.black.withOpacity(0.5),
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon:const Icon(
                     Icons.volume_off,
                     color: Colors.white,
                     size: 30,
@@ -42,7 +42,7 @@ class VideoListItem extends StatelessWidget {
               ),
               //right side
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding:const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

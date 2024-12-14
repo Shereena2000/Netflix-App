@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_clone/screens/splash_screen.dart';
@@ -19,14 +17,17 @@ class MyApp extends StatelessWidget {
       title: 'Netflix Clone',
       theme: ThemeData(
         textTheme: const TextTheme(
-            bodyLarge: TextStyle(color: Colors.white, fontSize: 24),
-            bodyMedium: TextStyle(color: Colors.white, fontSize: 20)),
+          bodyLarge: TextStyle(color: Colors.white, fontSize: 24),
+          bodyMedium: TextStyle(color: Colors.white, fontSize: 20),
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
-            .copyWith(background: Colors.black),
+        //   .copyWith(background: Colors.black)
+        ,
+        scaffoldBackgroundColor: Colors.black,
         fontFamily: GoogleFonts.ptSans().fontFamily,
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

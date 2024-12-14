@@ -18,7 +18,7 @@ class DownloadScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.black,
-        title: Text(
+        title:const Text(
           "Downloads",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
@@ -62,7 +62,7 @@ class DownloadScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+        const    SizedBox(
               height: 22,
             ),
             const Center(
@@ -71,7 +71,7 @@ class DownloadScreen extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
               ),
             ),
-            SizedBox(
+       const     SizedBox(
               height: 10,
             ),
             const Text(
@@ -115,7 +115,7 @@ class DownloadScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+      const      SizedBox(
               height: 10,
             ),
             Padding(

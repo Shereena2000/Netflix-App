@@ -51,11 +51,11 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                     Stack(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.3,       
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image:
-                                  NetworkImage("$ImageUrl${movie!.backdropPath}"),
+                              image: NetworkImage(
+                                  "$ImageUrl${movie!.backdropPath}"),
                             ),
                           ),
                           child: SafeArea(
@@ -109,19 +109,19 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Text(
                           movie.overview,
                           maxLines: 6,
                           overflow: TextOverflow.ellipsis,
-                          style:
-                              const TextStyle(color: Colors.white, fontSize: 17),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 17),
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     FutureBuilder(
@@ -130,18 +130,20 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                           if (snapshot.hasData) {
                             final recommendedmovie = snapshot.data;
                             return recommendedmovie!.results.isEmpty
-                                ? SizedBox()
+                                ? const SizedBox()
                                 : Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Text("More like this"),
-                                      SizedBox(
+                                      const Text("More like this"),
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       GridView.builder(
                                           itemCount:
                                               recommendedmovie.results.length,
-                                          physics: NeverScrollableScrollPhysics(),
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
                                           shrinkWrap: true,
                                           gridDelegate:
                                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -171,12 +173,15 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                                     ],
                                   );
                           }
-                          return const Text("Loading...",style: TextStyle(color: Colors.grey),);
+                          return const Text(
+                            "Loading...",
+                            style: TextStyle(color: Colors.grey),
+                          );
                         })
                   ],
                 );
               } else {
-                return SizedBox();
+                return const SizedBox();
               }
             },
           ),

@@ -3,7 +3,7 @@ import 'package:netflix_clone/screens/download_screen.dart';
 import 'package:netflix_clone/screens/fast_laughs_screen.dart';
 import 'package:netflix_clone/screens/home_screen.dart';
 import 'package:netflix_clone/screens/more_screen.dart';
-
+import 'package:netflix_clone/screens/search_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -11,7 +11,7 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         bottomNavigationBar: Container(
           color: Colors.black,
@@ -19,20 +19,27 @@ class BottomNavBar extends StatelessWidget {
           child: const TabBar(
             tabs: [
               Tab(
-                icon: Icon(Icons.home),
-                text: "Home",
+                icon: Icon(
+                  Icons.home,
+                  size: 28,
+                ),
+                child: FittedBox(child: Text("Home")),
               ),
               Tab(
-                icon: Icon(Icons.emoji_emotions),
-                text: "Fast Laugh",
+                icon: Icon(Icons.search,  size: 28,),
+                child: FittedBox(child: Text("Search",)), 
               ),
               Tab(
-                icon: Icon(Icons.photo_library_outlined),
-                text: "New & Hot",
+                icon: Icon(Icons.emoji_emotions,  size: 28,),
+                child: FittedBox(child: Text("Fast Laugh",)),
               ),
               Tab(
-                icon: Icon(Icons.download_for_offline_outlined),
-                text: "Downloads",
+                icon: Icon(Icons.photo_library_outlined,  size: 28,),
+                child: FittedBox(child: Text("New & Hot")),
+              ),
+              Tab(
+                icon: Icon(Icons.download_for_offline_outlined,  size: 30, ),
+                child: FittedBox(child: Text("Downloads")),
               ),
             ],
             indicatorColor: Colors.transparent,
@@ -42,6 +49,7 @@ class BottomNavBar extends StatelessWidget {
         ),
         body: const TabBarView(children: [
           HomeScreen(),
+          SearchScreen(),
           FastLaughsScreen(),
           MoreScreen(),
           DownloadScreen()

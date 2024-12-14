@@ -46,7 +46,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(5.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -109,12 +109,13 @@ class _SearchScreenState extends State<SearchScreen> {
                                   return InkWell(
                                     onTap: () {
                                       Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  MovieDetailScreen(
-                                                      movieId:
-                                                          data[index].id)));
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              MovieDetailScreen(
+                                                  movieId: data[index].id),
+                                        ),
+                                      );
                                     },
                                     child: Container(
                                       height: 150,
@@ -156,7 +157,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
-                                    crossAxisSpacing: 7 ,
+                                    crossAxisSpacing: 7,
                                     childAspectRatio: 1.2 / 2),
                             itemBuilder: (context, index) {
                               return InkWell(

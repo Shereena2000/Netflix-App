@@ -8,7 +8,7 @@ class VideoActionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+    padding:const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
       child: Column(
         children: [
           Icon(
@@ -18,7 +18,7 @@ class VideoActionWidget extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyle(color: Colors.white, fontSize: 16 ),
+            style:const TextStyle(color: Colors.white, fontSize: 16 ),
           )
         ],
       ),
